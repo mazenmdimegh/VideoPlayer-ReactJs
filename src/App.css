@@ -32,19 +32,26 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.pe-default{
+
+.pe-default {
   cursor: pointer;
-  flex-direction:row !important;
 }
-.rounded-left{
+
+.direction-row {
+  flex-direction: row !important;
+}
+
+.rounded-left {
   /* padding-left: 40px; */
   border-radius: 50px 0 0 50px !important;
 }
-.rounded-right{
+
+.rounded-right {
   width: 80px;
   height: 45px;
   border-radius: 0 50px 50px 0 !important;

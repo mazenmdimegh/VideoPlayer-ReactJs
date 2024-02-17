@@ -36,7 +36,7 @@ const Player = () => {
         }
         <div className='my-4'>
           {data.map((video, key) =>
-            <div class="card m-4 border-0 pe-default  d-flex;" onClick={() => handleClick(video.uri)} >
+            <div class="card m-4 border-0 pe-default direction-row d-flex;" onClick={() => handleClick(video.uri)} >
               <img class="card-img-top rounded" src={video.pictures.base_link} alt="Card image cap" style={{ width: 12 + "rem", height: 8 + "rem" }} />
               <div class="card-body">
                 {video.name.length >= 18 && <h5 class="card-title">{video.name.slice(0, 18)}...</h5>}
