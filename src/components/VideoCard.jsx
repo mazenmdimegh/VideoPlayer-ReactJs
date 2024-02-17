@@ -1,22 +1,13 @@
 import React from 'react'
 import { IoIosMusicalNote } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import { formatDate, secondsToMinutes } from '../helpers/helpers';
 
 const VideoCard = (props) => {
     const { video } = props
     const navigate = useNavigate();
-    function formatDate(date) {
-        return date
-    }
-    function secondsToMinutes(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainingSeconds = seconds % 60;
+
     
-        const formattedMinutes = String(minutes).padStart(2, '0');
-        const formattedSeconds = String(remainingSeconds).padStart(2, '0');
-    
-        return `${formattedMinutes}:${formattedSeconds} min`;
-    }
     function handleClick (){
         console.log("handleClick");
         navigate('/player?id='+video.uri.split("/")[2])

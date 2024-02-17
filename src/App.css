@@ -38,6 +38,7 @@
 }
 .pe-default{
   cursor: pointer;
+  flex-direction:row !important;
 }
 .rounded-left{
   /* padding-left: 40px; */
