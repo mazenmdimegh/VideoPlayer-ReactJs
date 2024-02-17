@@ -7,6 +7,7 @@ import { getAllVideos } from '../services/ApiServices'
 
 const Home = () => {
     const [data, setData] = useState()
+
     useEffect(() => {
         setData(getAllVideos())
 

@@ -2,8 +2,13 @@ import React from 'react'
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { FaCircleUser } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
+import { UserLogout } from '../services/ApiServices';
 
 const Header = () => {
+    
+    function Logout() {
+        UserLogout()
+    }
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
@@ -14,7 +19,7 @@ const Header = () => {
                         <button class="btn btn-outline-secondary rounded-right" type="button"><IoIosSearch style={{ fontSize: 25 + "px" }} /></button>
                     </div>
                 </div>
-                <div>
+                <div className='pe-default' onClick={Logout}>
                     LogOut <FaCircleUser style={{ fontSize: 35 + "px" }} />
                 </div>
             </div>

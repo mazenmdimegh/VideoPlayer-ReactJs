@@ -7,3 +7,6 @@ export function getById(id) {
 export function getAllVideos() {
     return data
 }
+export function UserLogout() {
+
+}
