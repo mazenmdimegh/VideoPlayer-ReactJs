@@ -16,7 +16,7 @@ const Header = () => {
 
     function Search() {
         searchVideo(keyword)
-        console.log(keyword);
+        navigate('/')
     }
     function Logout() {
         UserLogout()
@@ -35,8 +35,9 @@ const Header = () => {
                         <button className="btn btn-outline-secondary rounded-right" type="button" onClick={Search}><IoIosSearch style={{ fontSize: 25 + "px" }} /></button>
                     </div>
                 </div>
-                <div className='pe-default' onClick={Logout}>
-                    LogOut <FaCircleUser style={{ fontSize: 35 + "px" }} />
+                <div className='pe-default d-flex align-items-center' onClick={Logout}>
+                    <div className='mx-2'>LogOut</div>
+                     <FaCircleUser style={{ fontSize: 35 + "px" }} />
                 </div>
             </div>
         </nav>

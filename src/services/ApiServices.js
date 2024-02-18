@@ -1,4 +1,4 @@
-import { category } from "../dumpData";
+import { category, sideBarMenu } from "../dumpData";
 import store from "../hooks/store";
 
 
@@ -93,6 +93,9 @@ export function getSimilarVideo(id) {
 }
 export function getCategories() {
     return category
+}
+export function getItems() {
+    return sideBarMenu
 }
 export function UserLogout() {
     window.sessionStorage.removeItem("access_token")

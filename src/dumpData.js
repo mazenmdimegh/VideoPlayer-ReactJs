@@ -1,3 +1,13 @@
+export const sideBarMenu = ["Home",
+  "Shorts",
+  "subscriptions",
+  "Your channel",
+  "History",
+  "PLaylists",
+  "Your videos",
+  "To watch later",
+  "Like Videos",
+  "Type Beats",]
 export const category = ["Musique",
   "Mix",
   "Temps",

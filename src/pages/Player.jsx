@@ -15,7 +15,7 @@ const Player = () => {
     const queryParameters = new URLSearchParams(window.location.search)
     const id = queryParameters.get("id")
     getById(id)
-    getAllVideos()
+        // getAllVideos()
   }, [])
   const unsubscribe = store.subscribe(() => {
     setDetails(store.getState().selectVideo)
@@ -35,7 +35,7 @@ const Player = () => {
           <div className='m-5'>
             <iframe width="1024" height="520" src={details["player_embed_url"]} title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
             <h2 class="card-title mx-5 my-2">{details.name}</h2>
-            {/* <h5 class="card-text mx-5 my-2">{details.user.name} <IoIosMusicalNote /></h5> */}
+            <h5 class="card-text mx-5 my-2">{details.user.name} <IoIosMusicalNote /></h5>
           </div>
 
         }
