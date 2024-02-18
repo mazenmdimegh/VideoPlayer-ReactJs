@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { formatDate, secondsToMinutes } from '../helpers/helpers';
 import { IoIosMusicalNote } from "react-icons/io";
 import { getAllVideos, getById } from '../services/ApiServices';
+import store from '../hooks/store';
 
 const Player = () => {
   const [details, setDetails] = useState()
@@ -13,13 +14,19 @@ const Player = () => {
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search)
     const id = queryParameters.get("id")
-    setDetails(getById(id)[0])
-    setData(getAllVideos())
+    getById(id)
+    getAllVideos()
   }, [])
+  const unsubscribe = store.subscribe(() => {
+    setDetails(store.getState().selectVideo)
+    setData(store.getState().videos)
+  }
+  )
 
   function handleClick(uri) {
+    getById(uri.split("/")[2])
     navigate('/player?id=' + uri.split("/")[2])
-    window.location.reload();
+    // window.location.reload();
   }
   return (
     <div>
@@ -29,7 +36,7 @@ const Player = () => {
           <div className='m-5'>
             <iframe width="1024" height="520" src={details["player_embed_url"]} title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
             <h2 class="card-title mx-5 my-2">{details.name}</h2>
-            <h5 class="card-text mx-5 my-2">{details.user.name} <IoIosMusicalNote /></h5>
+            {/* <h5 class="card-text mx-5 my-2">{details.user.name} <IoIosMusicalNote /></h5> */}
           </div>
 
         }

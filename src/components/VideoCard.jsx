@@ -2,6 +2,7 @@ import React from 'react'
 import { IoIosMusicalNote } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { formatDate, secondsToMinutes } from '../helpers/helpers';
+import { getById } from '../services/ApiServices';
 
 const VideoCard = (props) => {
     const { video } = props
@@ -9,7 +10,7 @@ const VideoCard = (props) => {
 
     
     function handleClick (){
-        console.log("handleClick");
+        getById(video.uri.split("/")[2])
         navigate('/player?id='+video.uri.split("/")[2])
     }
     return (
