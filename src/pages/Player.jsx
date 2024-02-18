@@ -26,7 +26,6 @@ const Player = () => {
   function handleClick(uri) {
     getById(uri.split("/")[2])
     navigate('/player?id=' + uri.split("/")[2])
-    // window.location.reload();
   }
   return (
     <div>

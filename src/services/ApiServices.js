@@ -7,7 +7,7 @@ async function Login() {
     await fetch("https://api.vimeo.com/oauth/authorize/client", {
         method: "POST",
         headers: {
-            "Authorization": "basic ZWFjMWFiNTY0YzJmMjg4MDM1NWU3ZmUwNTBkYzBiYTljOTA1Nzk4NjpKZTU2TERqK1BFdVQycnVHS05SYUhpSjBqQldRMFc4OWt2aUtXbUJtdUh0dWtOWmtkd0wxOFZjZFZ5ejFPcm5kd2J4Y0VDalR3cHhhdjNlYW84SHVsRk1QdC9CSWVDT21yVVhyZm1IdTVIZFdXbEZ4U0FIN3kvL1YvQlduV2xhdQ==",
+            "Authorization": "basic "+process.env.REACT_APP_API_KEY,
             "Content-type": "application/json",
             "Accept": "application/vnd.vimeo.*+json;version=3.4",
         },
