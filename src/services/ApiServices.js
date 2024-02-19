@@ -19,7 +19,7 @@ async function Login() {
         .then(response => response.json())
         .then(response => {
             window.sessionStorage.setItem("access_token", response.access_token)
-            store.dispatch({ type: 'SET_LOADING', payload: false })
+            getAllVideos()
         })
         .catch(error => console.error(error));
 }
@@ -30,9 +30,10 @@ export async function getAllVideos() {
     const access_token = window.sessionStorage.getItem("access_token")
     if (access_token == "undefined" || access_token == undefined) {
         await Login()
-    }
-    await fetch("https://api.vimeo.com/videos?query=4lfa", {
-        method: "GET",
+    }else{
+
+        await fetch("https://api.vimeo.com/videos?query=4lfa", {
+            method: "GET",
         headers: {
             "Authorization": "bearer " + access_token,
             "Content-type": "application/json",
@@ -46,7 +47,8 @@ export async function getAllVideos() {
             return videos
         })
         .catch(error => console.error(error));
-    // return undefined
+    }
+        // return undefined
 }
 
 export function getById(id) {
