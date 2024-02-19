@@ -1,69 +1,55 @@
-# Getting Started with Create React App
+# Youtube Clone Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Introducing our web application that replicates the functionality of YouTube, enabling users to seamlessly search and play videos. The application is meticulously crafted with React and Javascript, employing powerful state management through Redux.
 
-## Available Scripts
+To enhance user experience, we have integrated the official Vimeo API, ensuring a robust video library for users to explore and enjoy. Authentication is seamlessly implemented, utilizing JWT access tokens to secure user interactions and provide a personalized experience.
 
-In the project directory, you can run:
+![Home](https://github.com/mazenmdimegh/VideoPlayer-ReactJs/assets/87076261/8d93093c-dec5-4749-bcc2-81320accc250)
 
-### `npm start`
+![player](https://github.com/mazenmdimegh/VideoPlayer-ReactJs/assets/87076261/6a7c2dc2-bfe7-4ec9-bb59-aa41e0114cdd)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Potential Future improvements
 
-### `npm run build`
+- Add pagination
+- Add error handling
+- Add sorting options for the results (Last updated, Name, Stars ...)
+- Improve the responsiveness of the code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install the dependencies
+    ```sh
+    npm install
+    ```
+2. Start the application
+    ```sh
+    npm start
+    ```
 
-### `npm run eject`
+### Running the test suite
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the test suite, you need to make sure that the dependencies are installed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Install the dependencies
+    ```sh
+    npm install
+    ```
+2. Run the test suite
+    ```sh
+    npm test
+    ```
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The project is deployed [here](https://video-player-react-js.vercel.app/).
+
+### Feedback
+
+This project was an enjoyable and challenging exercise in my React and JavaScript skills. I enjoyed the challenge of working with the Vimeo  API, and am proud of the end result.
 
 ### `npm run build` fails to minify
 
