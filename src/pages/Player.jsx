@@ -7,19 +7,23 @@ import { getAllVideos, getById } from '../services/ApiServices';
 import store from '../hooks/store';
 
 const Player = () => {
-  const [details, setDetails] = useState()
-  const [data, setData] = useState()
+  const [details, setDetails] = useState([])
+  const [data, setData] = useState([])
   const navigate = useNavigate();
 
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search)
     const id = queryParameters.get("id")
     getById(id)
-    // getAllVideos()
+    if(store.getState().videos.length==0){
+      getAllVideos()
+    }
   }, [])
+
   const unsubscribe = store.subscribe(() => {
     setDetails(store.getState().selectVideo)
     setData(store.getState().videos)
+    console.log(data);
   }
   )
 
@@ -31,7 +35,7 @@ const Player = () => {
     <div>
       <Header />
       <div className='d-flex'>
-        {details &&
+        {details && details.length != 0 &&
           <div className='m-5'>
             <iframe width="1024" height="520" src={details["player_embed_url"]} title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
             <h2 class="card-title mx-5 my-2">{details.name}</h2>
@@ -43,7 +47,7 @@ const Player = () => {
 
         }
         <div className='my-4'>
-          {data && data.map((video, key) =>
+          {data && data.length != 0 && data.map((video, key) =>
             <div class="card m-4 border-0 pe-default direction-row d-flex;" onClick={() => handleClick(video.uri)} >
               <img class="card-img-top rounded" src={video.pictures.base_link} alt="Card image cap" style={{ width: 12 + "rem", height: 8 + "rem" }} />
               <div class="card-body">

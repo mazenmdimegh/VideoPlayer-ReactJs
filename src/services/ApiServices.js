@@ -47,8 +47,8 @@ export async function getAllVideos() {
             return videos
         })
         .catch(error => console.error(error));
-    }
         // return undefined
+    }
 }
 
 export function getById(id) {
