@@ -1,7 +1,6 @@
 import { category, sideBarMenu } from "../dumpData";
 import store from "../hooks/store";
 
-
 async function Login() {
     store.dispatch({ type: 'SET_LOADING', payload: true })
     await fetch("https://api.vimeo.com/oauth/authorize/client", {
@@ -28,11 +27,13 @@ async function Login() {
 export async function getAllVideos() {
     store.dispatch({ type: 'SET_LOADING', payload: true })
     const access_token = window.sessionStorage.getItem("access_token")
+    console.log(access_token);
+    
     if (access_token == "undefined" || access_token == undefined) {
         await Login()
     }else{
 
-        await fetch("https://api.vimeo.com/videos?query=4lfa", {
+        await fetch("https://api.vimeo.com/videos?query=nike", {
             method: "GET",
         headers: {
             "Authorization": "bearer " + access_token,
